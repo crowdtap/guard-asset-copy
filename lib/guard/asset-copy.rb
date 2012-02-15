@@ -25,6 +25,7 @@ module Guard
     # Call once when Guard starts.
     # @raise [:task_has_failed] when start has failed
     def start
+      FileUtils.rm_f options[:assets_dest]
       run_all
     end
 
